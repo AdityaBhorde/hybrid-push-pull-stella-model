@@ -1,3 +1,2 @@
-# hybrid-push-pull-stella-model
-
+# Hybrid Push Pull Model (Stella) - Supply Chain Optimization
 
