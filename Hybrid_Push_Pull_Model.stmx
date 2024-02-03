@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>Project Model Push.Pull Model Part 1 and Part 2 and part 3 and part 4 (Recovered)</name>
+		<uuid>eed773d1-f4f7-4725-8d05-452b96d4f2dc</uuid>
+		<vendor>isee systems, inc.</vendor>
+		<product version="3.5.1" isee:build_number="3169" isee:saved_by_v1="true" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.125" isee:restore_on_start="false" method="Euler" time_units="Week" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="true" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+		<start>0</start>
+		<stop>12</stop>
+		<dt reciprocal="true">4</dt>
+	</sim_specs>
+	<isee:prefs saved_runs="5" keep="false" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rerun_on_structure_change="false" rifp="true">
+		<description>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Segoe UI&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; color:#000000;&quot;&gt;Group Partial Project &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; color:#000000;&quot;&gt;Members: &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; color:#000000;&quot;&gt;1) Anand Bhalerao &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; color:#000000;&quot;&gt;2) Kunal Patil&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Arial&apos;; font-size:10pt; color:#000000;&quot;&gt;3) Sanika Patil&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Arial&apos;; font-size:10pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+	</isee:prefs>
+	<isee:multiplayer_settings include_chat="true" allow_observers="false" advance_time_increment="1" max_advance_time_in_ms="0" model_stops_when_players_drop="false" observer_start_page="home_page" enabled="false"/>
+	<isee:time_formats default_format="Builtin">
+		<isee:time_format name="Builtin" type="adaptive"/>
+	</isee:time_formats>
+	<isee:number_format_extenders/>
+	<default_format/>
+	<model_units>
+		<unit name="Weeks">
+			<eqn/>
+			<alias>wk</alias>
+			<alias>week</alias>
+		</unit>
+		<unit name="Dimensionless">
+			<eqn>1</eqn>
+			<alias>dmnl</alias>
+			<alias>unitless</alias>
+		</unit>
+		<unit name="kilowatt hours per day">
+			<eqn>kWh/day</eqn>
+		</unit>
+		<unit name="kilowatts">
+			<eqn>kW</eqn>
+			<alias>kilowatt</alias>
+		</unit>
+	</model_units>
+	<model>
+		<variables>
+			<stock name="Cash Balance">
+				<eqn>Sales_Revenue-Total_Cost</eqn>
+				<inflow>Sales_Revenue</inflow>
+				<outflow>Total_Cost</outflow>
+				<units>NGN</units>
+			</stock>
+			<stock name="Distributor Inventory">
+				<eqn>1000</eqn>
+				<inflow>Distributor_Order_Fulfillment_Rate</inflow>
+				<outflow>Dealer_Order_Fulfillment_Rate</outflow>
+				<units>Units</units>
+			</stock>
+			<stock name="Dealer Inventory">
+				<eqn>100</eqn>
+				<inflow>Dealer_Order_Fulfillment_Rate</inflow>
+				<outflow>Sales_Rate</outflow>
+				<units>Units</units>
+			</stock>
+			<flow name="Distributor Order\nFulfillment Rate">
+				<eqn>MAX(0, Distributor_Indicated_Order)</eqn>
+				<non_negative/>
+				<units>Units/Week</units>
+			</flow>
+			<flow name="Dealer Order\nFulfillment Rate">
+				<eqn>DELAY3(Distributor_Order_Fulfillment_Rate, Dealer_Order_Fulfillment_Cycle_Time)</eqn>
+				<non_negative/>
+				<units>Units/Week</units>
+			</flow>
+			<flow name="Sales Rate">
+				<eqn>Desired_Sales_Rate * Sales_Fulfillment_Ratio</eqn>
+				<non_negative/>
+				<units>Units/Week</units>
+			</flow>
+			<stock name="Expected Customer\nDemand">
+				<eqn>500</eqn>
+				<outflow>Change_In_Expected_Customer_Demand</outflow>
+				<units>Units/Week</units>
+			</stock>
+			<flow name="Change In Expected\nCustomer Demand">
+				<eqn>(Customer_Demand_Rate-Expected_Customer_Demand)/Time_to_Average_Customer_Demand</eqn>
+				<units>Units/Week/Week</units>
+			</flow>
+			<aux name="Sales Price">
+				<eqn>8300000</eqn>
+				<units>NGN/Week</units>
+			</aux>
+			<aux name="Profit">
+				<eqn>Sales_Revenue-Total_Cost</eqn>
+				<units>NGN</units>
+			</aux>
+			<aux name="Unit cost">
+				<eqn>Dealer_Order_Fulfillment_Rate * Adjusted_Unit_Cost</eqn>
+				<units>NGN/Weeks</units>
+			</aux>
+			<aux name="Inventory Carrying Cost">
+				<eqn>20000</eqn>
+				<units>NGN/Week</units>
+			</aux>
+			<aux name="Adjusted Unit Cost">
+				<eqn>3500000</eqn>
+				<units>NGN</units>
+			</aux>
+			<aux name="Total Dwell Time">
+				<eqn>SAFEDIV(Dealer_Inventory, Sales_Rate)</eqn>
+				<units>Week</units>
+			</aux>
+			<aux name="Average Dwell Time">
+				<eqn>Distributor_Inventory / Dealer_Order_Fulfillment_Rate</eqn>
+				<units>Week</units>
+			</aux>
+			<aux name="Distributor\nIndicated Order">
+				<eqn>Distributor_Inventory_Adjustment + Desired_Distributor_Order</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Distributor\nAdjustment Time">
+				<eqn>2</eqn>
+				<units>week</units>
+			</aux>
+			<aux name="Distributor Inventory\nAdjustment">
+				<eqn>(Desired_Distributor_Inventory-Distributor_Inventory)/Distributor_Adjustment_Time</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Desired Distributor\nInventory">
+				<eqn>Dealer_Order_Fulfillment_Cycle_Time*Desired_Distributor_Order</eqn>
+				<units>Units</units>
+			</aux>
+			<aux name="Desired\nDistributor\nOrder">
+				<eqn>MAX(0, Expected_Customer_Demand+Dealer_Inventory_Adjustment)</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Dealer\nAdjustment Time">
+				<eqn>6</eqn>
+				<units>week</units>
+			</aux>
+			<aux name="Dealer Order\nFulfillment Cycle Time">
+				<eqn>6</eqn>
+				<units>week</units>
+			</aux>
+			<aux name="Max Sales Rate">
+				<eqn>Dealer_Inventory / Min_Sales_Processing_Time</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Dealer Inventory\nAdjustment">
+				<eqn>(Desired_Inventory-Dealer_Inventory)/Dealer_Adjustment_Time</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Desired Inventory">
+				<eqn>Desired_Inventory_Coverage * Expected_Customer_Demand</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Desired Inventory Coverage">
+				<eqn>Min_Sales_Processing_Time + Safety_Stock_Coverage</eqn>
+				<units>week</units>
+			</aux>
+			<aux name="Min Sales\nProcessing Time">
+				<eqn>2</eqn>
+				<units>week</units>
+			</aux>
+			<aux name="Sales Fulfillment\nRatio">
+				<eqn>SAFEDIV(Max_Sales_Rate, Desired_Sales_Rate)</eqn>
+				<units>Dimensionless</units>
+			</aux>
+			<aux name="Desired Sales Rate">
+				<eqn>Customer_Demand_Rate</eqn>
+				<units>Units/Week</units>
+			</aux>
+			<aux name="Customer\nDemand Rate">
+				<eqn>250</eqn>
+				<units>units</units>
+			</aux>
+			<aux name="Time to Average\nCustomer Demand">
+				<eqn>6</eqn>
+				<units>week</units>
+			</aux>
+			<aux name="Safety Stock\nCoverage">
+				<eqn>3</eqn>
+				<units>week</units>
+			</aux>
+			<flow name="Total Cost">
+				<eqn>Unit_cost + (Inventory_Carrying_Cost + Dealer_Inventory)</eqn>
+				<non_negative/>
+				<units>NGN/Week</units>
+			</flow>
+			<flow name="Sales Revenue">
+				<eqn>Sales_Rate * Sales_Price</eqn>
+				<non_negative/>
+				<units>NGN/Week</units>
+			</flow>
+		</variables>
+		<views>
+			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+				<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+					<isee:series_styles>
+						<isee:series_style color="blue" thickness="1"/>
+						<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF7F00" thickness="1"/>
+						<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#FF007F" thickness="1"/>
+						<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+						<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+						<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+						<isee:series_style color="#C8C8C8" thickness="1"/>
+					</isee:series_styles>
+				</graph>
+				<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				<button color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595"/>
+				<isee:annotation color="black" background="#E0E0E0" font_size="12pt" border_width="thin" border_style="solid" transparent="false" corner_radius="0" isee:flat="false" icon_side="top" isee:highlight_on_hover="false" isee:highlight_color="#959595" popup_corner_radius="0" popup_background_color="#FFFECF"/>
+				<slider color="#66CC66" background="#E0E0E0" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" vertical="false" isee:fancy_appearance="false" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:stacked_container color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="0" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:dual_slider color="#66CC66" background="silver" font_size="12pt" num_ticks="3" label_side="top" wrap_title="true" isee:show_hover_tip="when_deciding" input_expands="true" input_width="100"/>
+				<isee:sim_speed_slider color="black" background="white"/>
+				<isee:time_slider color="#E95F74" background="silver"/>
+				<isee:pie_input color="black" background="white" font_size="12pt" legend_position="bottom" isee:transparent="false"/>
+				<knob color="#66CC66" background="#E0E0E0" font_size="12pt" label_side="bottom" wrap_title="true"/>
+				<numeric_input color="black" background="#E0E0E0" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<numeric_input color="black" background="white" font_size="12pt" label_side="left" wrap_title="true" input_expands="false" input_width="100"/>
+				<switch color="black" background="#E0E0E0" font_size="12pt" label_side="top" wrap_title="true" isee:appearance="switch" isee:on_color="green"/>
+				<options color="black" background="white" appearance="radio-buttons" arrangement="vertical"/>
+				<graphical_input color="black" background="#E0E0E0" font_size="12pt" isee:show_hover_tip="true"/>
+				<group_input color="black" background="#E0E0E0" font_size="12pt"/>
+				<lamp color="black" background="white" font_size="9pt"/>
+				<gauge color="black" background="white" font_size="9pt" needle_color="#F09F72" bar_color="#EEEEEE" bar_progress_color="black" appearance="radial" num_major_ticks="11" num_minor_ticks="11" show_numeric_value="true"/>
+				<isee:spatial_map color="black" background="white" font_size="12pt"/>
+				<isee:animation_object color="black" background="white" font_size="12pt"/>
+				<isee:navigation_widget color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" padding="6 8" border_color="#999999" border_width="thin" border_style="solid" item_spacing="6" appearance="tabs" corner_radius="4" selected_item_color="black" selected_item_background="white" item_background="#DDDDDD" transparent_bg="false"/>
+				<isee:shape color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid" opacity="1" transparent_background="true" corner_radius="1"/>
+				<isee:selector color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
+				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+			</style>
+			<view isee:show_pages="false" background="white" page_width="1056" page_height="816" isee:page_cols="2" isee:page_rows="2" zoom="80" isee:popup_graphs_are_comparative="false" isee:enable_non_negative_highlights="false" type="stock_flow">
+				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
+					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="45" height="35"/>
+					</stock>
+					<flow color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</flow>
+					<isee:placeholder color="#228B22" background="white" font_color="#228B22" font_size="9pt" label_side="bottom"/>
+					<module color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
+						<shape type="rectangle" width="55" height="45"/>
+					</module>
+					<aux color="blue" background="white" font_color="blue" font_size="9pt" label_side="bottom">
+						<shape type="circle" radius="18"/>
+					</aux>
+					<group color="red" background="white" font_color="red" font_size="9pt"/>
+					<connector color="#FF007F" background="white" font_color="#FF007F" font_size="9pt" isee:thickness="1"/>
+					<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<isee:loop_indicator color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
+					<numeric_display color="white" background="white" font_size="12pt" border_width="thin" border_style="solid" isee:transparent="false" isee:show_divider="true" isee:show_bounding_box="true" label_side="left"/>
+					<graph color="black" background="white" font_size="12pt" axis_color="#666666" grid_color="#C8C8C8" isee:graph_area_color="white" legend_position="bottom" isee:transparent="false" isee:hide_border="false" axis_title_font_style="normal" axis_title_font_weight="normal" axis_title_text_decoration="none" axis_title_text_align="center" axis_title_vertical_text_align="center" axis_title_font_color="black" axis_title_font_family="Arial" axis_title_font_size="12pt" axis_title_text_padding="2" axis_title_text_border_color="black" axis_title_text_border_width="thin" axis_title_text_border_style="none" axis_label_font_style="normal" axis_label_font_weight="normal" axis_label_text_decoration="none" axis_label_text_align="center" axis_label_vertical_text_align="center" axis_label_font_color="black" axis_label_font_family="Arial" axis_label_font_size="9pt" axis_label_text_padding="2" axis_label_text_border_color="black" axis_label_text_border_width="thin" axis_label_text_border_style="none">
+						<isee:series_styles>
+							<isee:series_style color="blue" thickness="1"/>
+							<isee:series_style color="red" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="fuchsia" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="#008F44" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF7F00" thickness="1"/>
+							<isee:series_style color="#7F00FF" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#0CA0FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="lime" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#FF007F" thickness="1"/>
+							<isee:series_style color="aqua" thickness="1" pen_style="dot_dashed"/>
+							<isee:series_style color="#F586FF" thickness="1" pen_style="dotted"/>
+							<isee:series_style color="black" thickness="1" pen_style="dashed"/>
+							<isee:series_style color="#C8C8C8" thickness="1"/>
+						</isee:series_styles>
+					</graph>
+					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
+				</style>
+				<stock color="lime" font_color="lime" x="704.167" y="95" width="48.3333" height="31.6667" name="Cash Balance"/>
+				<stock color="#AA55FF" font_color="#AA55FF" x="296.667" y="370" name="Distributor Inventory"/>
+				<stock color="#AA00FF" font_color="#AA00FF" x="504.667" y="356.667" width="45" height="35" name="Dealer Inventory"/>
+				<flow color="black" font_color="black" x="219.583" y="373.333" name="Distributor Order\nFulfillment Rate">
+					<pts>
+						<pt x="165" y="373.333"/>
+						<pt x="274.167" y="373.333"/>
+					</pts>
+				</flow>
+				<flow color="black" font_color="black" label_side="left" label_angle="225" x="405.917" y="374.167" name="Dealer Order\nFulfillment Rate">
+					<pts>
+						<pt x="319.167" y="374.167"/>
+						<pt x="504.667" y="374.167"/>
+					</pts>
+				</flow>
+				<flow color="black" font_color="black" label_side="left" label_angle="225" x="639.084" y="373.333" name="Sales Rate">
+					<pts>
+						<pt x="549.667" y="373.333"/>
+						<pt x="752.5" y="373.333"/>
+					</pts>
+				</flow>
+				<stock color="red" font_color="red" label_side="bottom" x="714.643" y="678.107" name="Expected Customer\nDemand"/>
+				<flow label_side="top" x="806.5" y="675" name="Change In Expected\nCustomer Demand">
+					<pts>
+						<pt x="737.143" y="675"/>
+						<pt x="887.857" y="675"/>
+					</pts>
+				</flow>
+				<aux x="570" y="168" name="Sales Price"/>
+				<aux x="730" y="28" name="Profit"/>
+				<aux label_side="right" label_angle="45" x="800" y="177" name="Unit cost"/>
+				<aux x="906" y="159" name="Inventory Carrying Cost"/>
+				<aux x="888" y="237" name="Adjusted Unit Cost"/>
+				<aux label_side="top" x="605.25" y="304.286" name="Total Dwell Time"/>
+				<connector uid="13" polarity="+" isee:polarity_placement="outside" angle="196.39">
+					<from>Adjusted_Unit_Cost</from>
+					<to>Unit_cost</to>
+				</connector>
+				<connector uid="14" polarity="+" isee:polarity_placement="outside" angle="56.3145">
+					<from>Dealer_Order_Fulfillment_Rate</from>
+					<to>Unit_cost</to>
+				</connector>
+				<connector uid="18" polarity="+" isee:polarity_placement="outside" angle="92.9514">
+					<from>Dealer_Inventory</from>
+					<to>Total_Dwell_Time</to>
+				</connector>
+				<connector uid="19" polarity="-" isee:polarity_placement="outside" angle="97.7382">
+					<from>Sales_Rate</from>
+					<to>Total_Dwell_Time</to>
+				</connector>
+				<aux label_side="right" label_angle="45" x="343.143" y="252" name="Average Dwell Time"/>
+				<aux label_side="left" label_angle="135" x="112.143" y="461.429" name="Distributor\nIndicated Order"/>
+				<aux label_side="left" label_angle="225" x="211.286" y="586" name="Distributor\nAdjustment Time"/>
+				<aux label_side="left" label_angle="135" x="268.643" y="493.571" name="Distributor Inventory\nAdjustment"/>
+				<aux label_side="left" label_angle="225" x="338.571" y="568" name="Desired Distributor\nInventory"/>
+				<aux x="367.143" y="658.857" name="Desired\nDistributor\nOrder"/>
+				<aux label_side="left" x="456.286" y="537.143" name="Dealer\nAdjustment Time"/>
+				<aux label_side="right" x="414.083" y="456.857" width="24.4286" height="24.4286" name="Dealer Order\nFulfillment Cycle Time"/>
+				<aux label_side="right" label_angle="45" x="641.25" y="502.429" name="Max Sales Rate"/>
+				<aux label_side="right" x="547.857" y="537.143" name="Dealer Inventory\nAdjustment"/>
+				<aux label_side="left" x="623.25" y="617.857" name="Desired Inventory"/>
+				<aux x="789.607" y="593.714" name="Desired Inventory Coverage"/>
+				<aux label_side="bottom" x="717.857" y="537.143" name="Min Sales\nProcessing Time"/>
+				<aux x="789.607" y="493.571" name="Sales Fulfillment\nRatio"/>
+				<aux label_side="right" label_angle="45" x="898" y="461.429" name="Desired Sales Rate"/>
+				<aux x="941.286" y="575.714" name="Customer\nDemand Rate"/>
+				<aux x="805.25" y="723.571" name="Time to Average\nCustomer Demand"/>
+				<aux label_side="right" x="829.286" y="545.714" name="Safety Stock\nCoverage"/>
+				<connector uid="21" polarity="+" isee:polarity_placement="inside" angle="168.394">
+					<from>Distributor_Inventory_Adjustment</from>
+					<to>Distributor_Indicated_Order</to>
+				</connector>
+				<connector uid="22" polarity="+" isee:polarity_placement="outside" angle="285.736">
+					<from>Distributor_Inventory</from>
+					<to>Distributor_Inventory_Adjustment</to>
+				</connector>
+				<connector uid="23" font_size="12pt" polarity="-" isee:polarity_placement="inside" angle="58.1781">
+					<from>Distributor_Adjustment_Time</from>
+					<to>Distributor_Inventory_Adjustment</to>
+				</connector>
+				<connector uid="24" font_family="Lucida Sans Typewriter" font_size="12pt" isee:thickness="1" polarity="+" isee:polarity_placement="outside" angle="133.215">
+					<from>Desired_Distributor_Inventory</from>
+					<to>Distributor_Inventory_Adjustment</to>
+				</connector>
+				<connector uid="25" font_size="14pt" polarity="-" isee:polarity_placement="outside" angle="248.535">
+					<from>Dealer_Order_Fulfillment_Cycle_Time</from>
+					<to>Desired_Distributor_Inventory</to>
+				</connector>
+				<connector uid="27" polarity="+" isee:polarity_placement="outside" angle="116.095">
+					<from>Desired_Distributor_Order</from>
+					<to>Desired_Distributor_Inventory</to>
+				</connector>
+				<connector uid="28" polarity="+" isee:polarity_placement="outside" angle="220.696">
+					<from>Desired_Distributor_Order</from>
+					<to>Distributor_Indicated_Order</to>
+				</connector>
+				<connector uid="29" angle="248.199">
+					<from>Dealer_Inventory_Adjustment</from>
+					<to>Desired_Distributor_Order</to>
+				</connector>
+				<connector uid="30" angle="205.83">
+					<from>Expected_Customer_Demand</from>
+					<to>Desired_Distributor_Order</to>
+				</connector>
+				<connector uid="31" polarity="-" isee:polarity_placement="inside" angle="308.474">
+					<from>Expected_Customer_Demand</from>
+					<to>Change_In_Expected_Customer_Demand</to>
+				</connector>
+				<connector uid="32" font_size="16pt" isee:thickness="0.5" polarity="-" isee:polarity_placement="inside" angle="88.5258">
+					<from>Time_to_Average_Customer_Demand</from>
+					<to>Change_In_Expected_Customer_Demand</to>
+				</connector>
+				<connector uid="34" polarity="+" isee:polarity_placement="outside" angle="234.137">
+					<from>Safety_Stock_Coverage</from>
+					<to>Desired_Inventory_Coverage</to>
+				</connector>
+				<connector uid="35" angle="168.644">
+					<from>Expected_Customer_Demand</from>
+					<to>Desired_Inventory</to>
+				</connector>
+				<connector uid="36" polarity="+" isee:polarity_placement="outside" angle="133.048">
+					<from>Desired_Inventory</from>
+					<to>Dealer_Inventory_Adjustment</to>
+				</connector>
+				<connector uid="37" polarity="-" isee:polarity_placement="outside" angle="0">
+					<from>Dealer_Adjustment_Time</from>
+					<to>Dealer_Inventory_Adjustment</to>
+				</connector>
+				<connector uid="38" polarity="+" isee:polarity_placement="outside" angle="96.0469">
+					<from>Customer_Demand_Rate</from>
+					<to>Desired_Sales_Rate</to>
+				</connector>
+				<connector uid="39" polarity="-" isee:polarity_placement="outside" angle="231.633">
+					<from>Desired_Sales_Rate</from>
+					<to>Sales_Fulfillment_Ratio</to>
+				</connector>
+				<connector uid="41" polarity="+" isee:polarity_placement="inside" angle="141.382">
+					<from>Sales_Fulfillment_Ratio</from>
+					<to>Sales_Rate</to>
+				</connector>
+				<connector uid="42" polarity="+" isee:polarity_placement="outside" angle="351.686">
+					<from>Max_Sales_Rate</from>
+					<to>Sales_Fulfillment_Ratio</to>
+				</connector>
+				<connector uid="43" polarity="+" isee:polarity_placement="outside" angle="311.652">
+					<from>Dealer_Inventory</from>
+					<to>Max_Sales_Rate</to>
+				</connector>
+				<connector uid="44" polarity="-" isee:polarity_placement="outside" angle="277.235">
+					<from>Dealer_Inventory</from>
+					<to>Dealer_Inventory_Adjustment</to>
+				</connector>
+				<connector uid="45" polarity="-" isee:polarity_placement="outside" angle="155.623">
+					<from>Min_Sales_Processing_Time</from>
+					<to>Max_Sales_Rate</to>
+				</connector>
+				<connector uid="46" polarity="+" isee:polarity_placement="outside" angle="315">
+					<from>Min_Sales_Processing_Time</from>
+					<to>Desired_Inventory_Coverage</to>
+				</connector>
+				<isee:loop_indicator text="B" orientation="clockwise" uid="47" x="206.857" y="422.429" width="30.7143" height="30"/>
+				<isee:loop_indicator text="B" orientation="clockwise" uid="48" x="328.143" y="422.429" width="30" height="30"/>
+				<isee:loop_indicator text="B" orientation="counter_clockwise" uid="49" x="630.083" y="409.286" width="30" height="30"/>
+				<connector uid="50" polarity="+" isee:polarity_placement="inside" angle="179.759">
+					<from>Desired_Inventory_Coverage</from>
+					<to>Desired_Inventory</to>
+				</connector>
+				<flow label_side="top" x="810.917" y="110.833" name="Total Cost">
+					<pts>
+						<pt x="752.5" y="110.833"/>
+						<pt x="893.333" y="110.833"/>
+					</pts>
+				</flow>
+				<connector uid="12" polarity="+" isee:polarity_placement="inside" angle="92.3469">
+					<from>Unit_cost</from>
+					<to>Total_Cost</to>
+				</connector>
+				<connector uid="11" polarity="+" isee:polarity_placement="outside" angle="189.317">
+					<from>Inventory_Carrying_Cost</from>
+					<to>Total_Cost</to>
+				</connector>
+				<flow label_side="top" x="637.441" y="105.714" name="Sales Revenue">
+					<pts>
+						<pt x="570.714" y="105.714"/>
+						<pt x="704.167" y="105.714"/>
+					</pts>
+				</flow>
+				<connector uid="15" polarity="+" isee:polarity_placement="inside" angle="17.7447">
+					<from>Sales_Price</from>
+					<to>Sales_Revenue</to>
+				</connector>
+				<connector uid="16" polarity="+" isee:polarity_placement="inside" angle="38.2018">
+					<from>Sales_Rate</from>
+					<to>Sales_Revenue</to>
+				</connector>
+				<connector uid="9" polarity="+" isee:polarity_placement="inside" angle="82.4253">
+					<from>Sales_Revenue</from>
+					<to>Profit</to>
+				</connector>
+				<connector uid="40" polarity="+" isee:polarity_placement="inside" angle="161.209">
+					<from>Desired_Sales_Rate</from>
+					<to>Sales_Rate</to>
+				</connector>
+				<connector uid="17" polarity="+" isee:polarity_placement="inside" angle="64.5757">
+					<from>Dealer_Inventory</from>
+					<to>Total_Cost</to>
+				</connector>
+				<connector uid="26" polarity="-" isee:polarity_placement="outside" angle="72.9473">
+					<from>Dealer_Order_Fulfillment_Cycle_Time</from>
+					<to>Dealer_Order_Fulfillment_Rate</to>
+				</connector>
+				<connector uid="51" polarity="+" isee:polarity_placement="outside" angle="112.621">
+					<from>Distributor_Inventory</from>
+					<to>Average_Dwell_Time</to>
+				</connector>
+				<connector uid="52" polarity="-" isee:polarity_placement="outside" angle="89.6091">
+					<from>Dealer_Order_Fulfillment_Rate</from>
+					<to>Average_Dwell_Time</to>
+				</connector>
+				<connector uid="3" polarity="-" isee:polarity_placement="outside" angle="71.8856">
+					<from>Distributor_Order_Fulfillment_Rate</from>
+					<to>Dealer_Order_Fulfillment_Rate</to>
+				</connector>
+				<connector uid="20" polarity="+" isee:polarity_placement="inside" angle="65.9245">
+					<from>Distributor_Indicated_Order</from>
+					<to>Distributor_Order_Fulfillment_Rate</to>
+				</connector>
+				<connector uid="10" polarity="-" isee:polarity_placement="inside" angle="83.3231">
+					<from>Total_Cost</from>
+					<to>Profit</to>
+				</connector>
+				<connector uid="33" color="#FF007F" font_size="16pt" polarity="+" isee:polarity_placement="inside" angle="297.176">
+					<from>Customer_Demand_Rate</from>
+					<to>Change_In_Expected_Customer_Demand</to>
+				</connector>
+			</view>
+		</views>
+	</model>
+</xmile>
+
